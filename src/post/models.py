@@ -19,10 +19,10 @@ class Category (models.Model):
         return self.title 
 
 class Post(models.Model):
-    title=models.models.CharField(max_length=100)
+    title=models.CharField(max_length=100)
     overview = models.TextField()
     timestap = models.DateTimeField (auto_now_add=True)
-    comment_count = models.IntegerField(defult = 0)
+    comment_count = models.IntegerField(default= 0)
     author = models.ForeignKey(Author, on_delete=models.CASCADE)
     thumbnail = models.ImageField()
     categories = models.ManyToManyField(Category)
